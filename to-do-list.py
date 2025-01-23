@@ -27,7 +27,7 @@ def clear_tasks():
 # Create the main window
 root = tk.Tk()
 root.title("To-Do List Application")
-root.geometry("400x450")
+root.geometry("400x380")
 
 # Create and place widgets
 task_entry = tk.Entry(root, width=35, font=("Arial", 14))
@@ -39,7 +39,7 @@ add_button.pack(pady=5)
 delete_button = tk.Button(root, text="Delete Task", width=15, command=remove_task)
 delete_button.pack(pady=5)
 
-task_listbox = tk.Listbox(root, width=40, height=15, font=("Arial", 12), selectmode=tk.SINGLE)
+task_listbox = tk.Listbox(root, width=40, height=10, font=("Arial", 12), selectmode=tk.SINGLE)
 task_listbox.pack(pady=10)
 
 clear_button = tk.Button(root, text="Clear All Tasks", width=15, command=clear_tasks)

@@ -41,7 +41,7 @@ class ExpenseTrackerApp:
         self.tracker = ExpenseTracker()  # Create an instance of ExpenseTracker
         
         master.title("Expense Tracker")  # Set the window title
-        master.geometry("500x600")  # Set the window size
+        master.geometry("400x400")  # Set the window size
 
         # Label for displaying "Expenses"
         self.expenses_label = Label(master, text="Expenses")

@@ -39,7 +39,7 @@ def show_bmi_result():
 # Create main window
 root = tk.Tk()
 root.title("BMI Calculator")
-root.geometry("300x250")
+root.geometry("300x200")
 
 # Weight input
 weight_label = tk.Label(root, text="Weight (kg):")

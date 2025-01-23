@@ -7,7 +7,7 @@ class NumberGuessingGame:
         # Initialize the main application window
         self.root = root
         self.root.title("Number Guessing Game")  # Set the window title
-        self.root.geometry("300x200")  # Set the window size
+        self.root.geometry("300x150")  # Set the window size
 
         # Generate a random target number between 1 and 100
         self.target_number = random.randint(1, 100)

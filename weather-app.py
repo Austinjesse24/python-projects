@@ -9,7 +9,7 @@ class WeatherApp:
         # Initialize the main window
         self.master = master
         master.title("Weather Information")
-        master.geometry("400x500")
+        master.geometry("400x250")
 
         # City Input
         self.city_label = tk.Label(master, text="Enter City Name:")

@@ -41,7 +41,7 @@ class BudgetTrackerApp:
         self.budget = Budget()  # Create a Budget instance
 
         master.title("Budget Tracker")  # Set the title of the window
-        master.geometry("400x550")  # Set the window size
+        master.geometry("350x300")  # Set the window size
 
         # Category Listbox Label
         self.category_label = tk.Label(master, text="Categories")

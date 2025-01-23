@@ -5,7 +5,7 @@ class Calculator:
         # Initialize the window (master) and set its title and size
         self.master = master
         master.title("Calculator")
-        master.geometry("300x400")
+        master.geometry("255x285")
 
         # Entry field where the input/output is displayed
         self.entry = tk.Entry(master, width=20, font=('Arial', 16), justify='right')
