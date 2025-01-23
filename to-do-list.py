@@ -1,55 +1,45 @@
+import tkinter as tk
+from tkinter import messagebox
 
-
-def display_menu():
-    print("To-Do List Menu:")
-    print("1. View To-Do List")
-    print("2. Add To-Do Item")
-    print("3. Remove To-Do Item")
-    print("4. Exit")
-
-def view_list(todo_list):
-    if not todo_list:
-        print("Your to-do list is empty.")
+def add_task():
+    task = task_entry.get()
+    if task:
+        task_listbox.insert(tk.END, task)
+        task_entry.delete(0, tk.END)
     else:
-        print("Your To-Do List:")
-        for idx, item in enumerate(todo_list, 1):
-            print(f"{idx}. {item}")
+        messagebox.showwarning("Input Error", "Please enter a task!")
 
-def add_item(todo_list):
-    item = input("Enter the to-do item: ")
-    todo_list.append(item)
-    print(f"'{item}' has been added to your to-do list.")
+def remove_task():
+    selected_task_index = task_listbox.curselection()
+    if selected_task_index:
+        task_listbox.delete(selected_task_index)
+    else:
+        messagebox.showwarning("Selection Error", "Please select a task to remove!")
 
-def remove_item(todo_list):
-    view_list(todo_list)
-    if todo_list:
-        try:
-            item_number = int(input("Enter the number of the item to remove: "))
-            if 1 <= item_number <= len(todo_list):
-                removed_item = todo_list.pop(item_number - 1)
-                print(f"'{removed_item}' has been removed from your to-do list.")
-            else:
-                print("Invalid item number.")
-        except ValueError:
-            print("Please enter a valid number.")
+def clear_tasks():
+    if messagebox.askyesno("Confirmation", "Are you sure you want to clear all tasks?"):
+        task_listbox.delete(0, tk.END)
 
-def main():
-    todo_list = []
-    while True:
-        display_menu()
-        choice = input("Enter your choice: ")
-        if choice == '1':
-            view_list(todo_list)
-        elif choice == '2':
-            add_item(todo_list)
-        elif choice == '3':
-            remove_item(todo_list)
-        elif choice == '4':
-            print("Exiting the to-do list application.")
-            break
-        else:
-            print("Invalid choice. Please try again.")
+# Create the main window
+root = tk.Tk()
+root.title("To-Do List Application")
+root.geometry("400x450")
 
-if __name__ == "__main__":
-    main()
-    
+# Create and place widgets
+task_entry = tk.Entry(root, width=35, font=("Arial", 14))
+task_entry.pack(pady=10)
+
+add_button = tk.Button(root, text="Add Task", width=15, command=add_task)
+add_button.pack(pady=5)
+
+delete_button = tk.Button(root, text="Delete Task", width=15, command=remove_task)
+delete_button.pack(pady=5)
+
+task_listbox = tk.Listbox(root, width=40, height=15, font=("Arial", 12), selectmode=tk.SINGLE)
+task_listbox.pack(pady=10)
+
+clear_button = tk.Button(root, text="Clear All Tasks", width=15, command=clear_tasks)
+clear_button.pack(pady=5)
+
+# Run the application
+root.mainloop()
