@@ -1,32 +1,3 @@
-# import requests
-
-# def get_weather(city):
-#     api_key = '10239cd5e130220a7e977787afaeaa1b'  # Replace with your OpenWeatherMap API key
-#     base_url = 'http://api.openweathermap.org/data/2.5/weather?'
-#     complete_url = base_url + 'q=' + city + '&appid=' + api_key + '&units=metric'
-    
-#     response = requests.get(complete_url)
-#     data = response.json()
-    
-#     if data['cod'] != '404':
-#         main = data['main']
-#         weather = data['weather'][0]
-#         temperature = main['temp']
-#         pressure = main['pressure']
-#         humidity = main['humidity']
-#         description = weather['description']
-        
-#         print(f"Temperature: {temperature}°C")
-#         print(f"Pressure: {pressure} hPa")
-#         print(f"Humidity: {humidity}%")
-#         print(f"Weather description: {description}")
-#     else:
-#         print("City not found.")
-
-# if __name__ == "__main__":
-#     city = input("Enter city name: ")
-#     get_weather(city)
-
 # Import for the necessary libraries
 import tkinter as tk
 import requests
