@@ -28,6 +28,7 @@ from tkinter import messagebox
 
 def calculate_bmi(weight, height):
     """Calculate BMI based on weight and height."""
+    height = height / 100  # Convert cm to meter
     bmi = weight / (height ** 2)
     return bmi
 
@@ -72,7 +73,7 @@ weight_entry = tk.Entry(root)
 weight_entry.pack(pady=5)
 
 # Height input
-height_label = tk.Label(root, text="Height (meters):")
+height_label = tk.Label(root, text="Height (cm):")
 height_label.pack(pady=5)
 height_entry = tk.Entry(root)
 height_entry.pack(pady=5)
